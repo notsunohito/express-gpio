@@ -1,5 +1,6 @@
 var ApiResult = require('./apiresult');
 var Validator = require('./validator');
+var exec      = require('child_process').exec;
 
 var Controller = {
 
@@ -23,11 +24,16 @@ var Controller = {
 
     on: function(number) {
         var message ='on : ' + number;
+        exec('echo 2 > /sys/class/gpio/export');
+        exec('echo out > /sys/class/gpio/gpio2/direction');
+        exec('echo 1 > /sys/class/gpio/gpio2/value');
         return ApiResult.ok(number, 'on', message);
     },
 
     off: function(number) {
         var message = 'off : ' + number;
+        exec('echo 0 > /sys/class/gpio/gpio2/value');
+        exec('echo 2 > /sys/class/gpio/unexport');
         return ApiResult.ok(number, 'off', message);
     }
 };
