@@ -6,6 +6,9 @@ var Validator = {
                'off',
                'show'],
     isLegalNumber: function(number) {
+        if(/[^0-9]/.test(number)) {
+            return false;
+        }
         var n = parseInt(number, 10);
         return this.numbers.indexOf(n) >= 0;
     },
