@@ -3,15 +3,14 @@ var Validator = require('./validator');
 
 var Controller = {
 
-    do: function(number, action) {
+    do: function(action, number) {
         var message = null;
-        if(!Validator.isExistNumber( number ) ) {
-            message = 'error: Number must be any of the folloing values : ' + Validator.getLegalNumbers();
+        if(!Validator.isLegalNumber( number )) {
+            message = 'error: The number must be any of the following values : ' + Validator.getLegalNumbers();
             return ApiResult.error(number, action, message);
         }
-        if(action === 'do'
-           || !this.hasOwnProperty(action)) {
-            message ="error: Action must be 'show', 'on' or 'off'";
+        if(!Validator.isLegalAction( action ) ) {
+            message ="error: The action must be 'show', 'on' or 'off'";
             return ApiResult.error(number, action, message);
         }
         return this[action].call(this, number);
