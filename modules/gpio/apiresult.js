@@ -6,6 +6,7 @@ var ApiResult = {
         result.action = action;       
         result.hasError = false;    
         result.message = message;
+        console.log( message );
         return result;
     },
     error: function(number, action, message) {
@@ -13,6 +14,7 @@ var ApiResult = {
         result.action = action;       
         result.hasError = true;    
         result.message = message;
+        console.log( message );
         return result;
     }    
 };

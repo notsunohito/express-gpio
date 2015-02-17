@@ -1,6 +1,6 @@
 {
-  "name": "sample",
-  "version": "0.0.0",
+  "name": "express-gpio",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www"
