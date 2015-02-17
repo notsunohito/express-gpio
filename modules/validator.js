@@ -11,7 +11,17 @@ var Validator = {
     },
     isExistAction: function(action) {
         return this.actions.indexOf(action) >= 0;
+    },
+    getLegalNumbers: function() {
+        return this.numbers.reduce(function(acc, current) {
+            return acc + ', ' + current;
+        });
+    },
+    getLegalActions: function() {
+        return this.actions.reduce(function(acc, current) {
+            return acc + ' or ' + current;
+        });
     }
 };
-
+//console.log(Validator.isExistNumber(3));
 module.exports = Validator;

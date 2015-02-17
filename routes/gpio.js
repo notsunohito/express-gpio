@@ -1,21 +1,18 @@
 var express = require('express');
 var router = express.Router();
 
-var Validator = require('../modules/validator');
+var Controller = require('../modules/controller');
 
 
 router.get('/:number/:action', function(req, res, next) {
-    var number = req.params.number;
-    var action = req.params.action;
-    if (!Validator.isExistNumber( number )) {
-        res.status(400).send('Validator:' + number + ' is not exist');
+    var number       = req.params.number;
+    var action       = req.params.action;
+    var result = Controller.do(number, action);
+    if (result.hasError) {
+        res.status(400).send( result );
         return;
     }
-    if (!Validator.isExistAction(action)) {
-        res.status(400).send('action:' + action + ' is not defined');
-        return;
-    }
-    res.status(200).send(number + ':' + action);
+    res.status(200).send( result );
 });
 
 
