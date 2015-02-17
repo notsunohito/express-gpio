@@ -24,16 +24,15 @@ var Controller = {
 
     on: function(number) {
         var message ='on : ' + number;
-        exec('echo 2 > /sys/class/gpio/export');
-        exec('echo out > /sys/class/gpio/gpio2/direction');
-        exec('echo 1 > /sys/class/gpio/gpio2/value');
+        exec('echo '+ number +' > /sys/class/gpio/export');
+        exec('echo out > /sys/class/gpio/gpio' + number + '/direction');
+        exec('echo 1 > /sys/class/gpio/gpio' + number +'/value');
         return ApiResult.ok(number, 'on', message);
     },
 
     off: function(number) {
         var message = 'off : ' + number;
-        exec('echo 0 > /sys/class/gpio/gpio2/value');
-        exec('echo 2 > /sys/class/gpio/unexport');
+        exec('echo 0 > /sys/class/gpio/gpio'+ number +'/value');
         return ApiResult.ok(number, 'off', message);
     }
 };
