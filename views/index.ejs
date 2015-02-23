@@ -1,5 +1,82 @@
-<% include ./header %>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <link href="/stylesheets/lib/purecss/pure-min.css" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/lib/flipswitch/flipswitch.css" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/style.css" rel="stylesheet" type="text/css">
+  <title>Express GPIOs</title>
+</head>
+<body>
 
-<h1>GPIO</h1>
+  <div class="container">
 
-<% include ./footer %>
+    <div id="main" class="pure-g">
+      <div class="pure-u-1">
+        <p>GPIOs</p>
+        <table id="gpios">
+          <tr>
+            <td><button class="pure-button gpio-red pure-button-disabled">5V</button></td>
+            <td><button class="pure-button gpio-red pure-button-disabled">5V</button></td>
+            <td><button class="pure-button gpio-black pure-button-disabled">Ground</button></td>
+            <td><button class="pure-button gpio-green">GPIO14</button></td>
+            <td><button class="pure-button gpio-green">GPIO15</button></td>
+            <td><button class="pure-button gpio-green">GPIO18</button></td>
+            <td><button class="pure-button gpio-black pure-button-disabled">Ground</button></td>
+            <td><button class="pure-button gpio-green">GPIO23</button></td>
+            <td><button class="pure-button gpio-green">GPIO24</button></td>
+            <td><button class="pure-button gpio-black pure-button-disabled">Ground</button></td>
+            <td><button class="pure-button gpio-green">GPIO25</button></td>
+            <td><button class="pure-button gpio-green">GPIO8</button></td>
+            <td><button class="pure-button gpio-green">GPIO7</button></td>
+          </tr>
+          <tr>
+            <td><button class="pure-button gpio-orange pure-button-disabled">3V3</button></td>
+            <td><button class="pure-button gpio-pink pure-button-active">GPIO2</button></td>
+            <td><button class="pure-button gpio-green">GPIO3</button></td>
+            <td><button class="pure-button gpio-green">GPIO4</button></td>
+            <td><button class="pure-button gpio-black pure-button-disabled">Ground</button></td>
+            <td><button class="pure-button gpio-green">GPIO17</button></td>
+            <td><button class="pure-button gpio-green">GPIO27</button></td>
+            <td><button class="pure-button gpio-green">GPIO22</button></td>
+            <td><button class="pure-button gpio-orange pure-button-disabled">3V3</button></td>
+            <td><button class="pure-button gpio-green">GPIO10</button></td>
+            <td><button class="pure-button gpio-green">GPIO9</button></td>
+            <td><button class="pure-button gpio-green">GPIO11</button></td>
+            <td><button class="pure-button gpio-black pure-button-disabled">Ground</button></td>
+          </tr>
+        </table>
+      </div>
+      <div id="gpio-interfeces" class="pure-u-1">
+        <p>interfaces</p>
+        <ul>
+          <li>
+            <span class="left">GPIO2</span>
+            <div class="onoffswitch left">
+              <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="gpio-switch2">
+              <label class="onoffswitch-label" for="gpio-switch2">
+                <span class="onoffswitch-inner"></span>
+                <span class="onoffswitch-switch"></span>
+              </label>
+            </div>
+          </li>
+          <li>
+            <span class="left">GPIO3</span>
+            <div class="onoffswitch left">
+              <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="gpio-switch3">
+              <label class="onoffswitch-label" for="gpio-switch3">
+                <span class="onoffswitch-inner"></span>
+                <span class="onoffswitch-switch"></span>
+              </label>
+            </div>
+          </li>
+        </ul>
+      </div> <!-- #gpio-interfeces -->
+    </div>
+
+  </div> <!-- .container -->
+
+  <script src="/javascripts/main.js"></script>
+
+</body>
+</html>

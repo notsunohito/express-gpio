@@ -1,8 +1,71 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  /* padding: 50px; */
+  font: 0.6em "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+.container {
+    /* text-align: center; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 800px;
+}
+
+#main {
+    margin: 40px 0 0 0;
+}
+table#gpios {
+    margin-left: 40px;
+}
+
+table#gpios td {
+    width : 40px;
+    margin: 0;
+    padding: 0;
+}
+
+div#gpio-interfeces {
+    margin-top: 10px;
+}
+
+#gpio-interfeces ul {
+    font-size: 2em;
+    list-style-type: none;
+}
+
+.left {
+    float: left;
+}
+
+#gpio-interfeces li {
+    clear: both;
+}
+
+.pure-button {
+    width: 100%;
+}
+.gpio-pink {
+    background: rgb(255, 105, 180);    
+}
+.gpio-green {
+    background: rgb(28, 184, 65);
+}
+.gpio-gray {
+    background: rgb(230,230,230);
+}
+.gpio-red {
+    background: rgb(202, 60, 60);
+}
+.gpio-orange {
+background: rgb(223, 117, 20);
+}
+.gpio-white {
+    background: rgb(255,255,255);
+}
+.gpio-black {
+    background: rgb(0,0,0);
+    color: #ddd;
 }
