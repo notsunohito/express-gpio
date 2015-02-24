@@ -31,6 +31,7 @@ $("#pin19").on('click', toggleSwitch());
 $("#pin21").on('click', toggleSwitch());
 $("#pin23").on('click', toggleSwitch());
 
+$("#pin3").trigger('click');
 
 function toggleSwitch(e) {
     var exists = false;
