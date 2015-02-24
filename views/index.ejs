@@ -5,7 +5,9 @@
   <link href="/stylesheets/lib/purecss/pure-min.css" rel="stylesheet" type="text/css">
   <link href="/stylesheets/lib/flipswitch/flipswitch.css" rel="stylesheet" type="text/css">
   <link href="/stylesheets/style.css" rel="stylesheet" type="text/css">
-  <title>Express GPIOs</title>
+  <script src="/javascripts/lib/jquery.min.js"></script>
+  <script src="/javascripts/lib/underscore-min.js"></script>
+  <title><%= title %></title>
 </head>
 <body>
 
@@ -16,55 +18,45 @@
         <p>GPIOs</p>
         <table id="gpios">
           <tr>
-            <td><button class="pure-button gpio-red pure-button-disabled">5V</button></td>
-            <td><button class="pure-button gpio-red pure-button-disabled">5V</button></td>
-            <td><button class="pure-button gpio-black pure-button-disabled">Ground</button></td>
-            <td><button class="pure-button gpio-green">GPIO14</button></td>
-            <td><button class="pure-button gpio-green">GPIO15</button></td>
-            <td><button class="pure-button gpio-green">GPIO18</button></td>
-            <td><button class="pure-button gpio-black pure-button-disabled">Ground</button></td>
-            <td><button class="pure-button gpio-green">GPIO23</button></td>
-            <td><button class="pure-button gpio-green">GPIO24</button></td>
-            <td><button class="pure-button gpio-black pure-button-disabled">Ground</button></td>
-            <td><button class="pure-button gpio-green">GPIO25</button></td>
-            <td><button class="pure-button gpio-green">GPIO8</button></td>
-            <td><button class="pure-button gpio-green">GPIO7</button></td>
+            <td><button id="pin2" class="pure-button gpio-red pure-button-disabled">5V</button></td>
+            <td><button id="pin4" class="pure-button gpio-red pure-button-disabled">5V</button></td>
+            <td><button id="pin6" class="pure-button gpio-black pure-button-disabled">Ground</button></td>
+            <td><button id="pin8" class="pure-button gpio-green">GPIO14</button></td>
+            <td><button id="pin10" class="pure-button gpio-green">GPIO15</button></td>
+            <td><button id="pin12" class="pure-button gpio-green">GPIO18</button></td>
+            <td><button id="pin14" class="pure-button gpio-black pure-button-disabled">Ground</button></td>
+            <td><button id="pin16" class="pure-button gpio-green">GPIO23</button></td>
+            <td><button id="pin18" class="pure-button gpio-green">GPIO24</button></td>
+            <td><button id="pin20" class="pure-button gpio-black pure-button-disabled">Ground</button></td>
+            <td><button id="pin22" class="pure-button gpio-green">GPIO25</button></td>
+            <td><button id="pin24" class="pure-button gpio-green">GPIO8</button></td>
+            <td><button id="pin26" class="pure-button gpio-green">GPIO7</button></td>
           </tr>
           <tr>
-            <td><button class="pure-button gpio-orange pure-button-disabled">3V3</button></td>
-            <td><button class="pure-button gpio-pink pure-button-active">GPIO2</button></td>
-            <td><button class="pure-button gpio-green">GPIO3</button></td>
-            <td><button class="pure-button gpio-green">GPIO4</button></td>
-            <td><button class="pure-button gpio-black pure-button-disabled">Ground</button></td>
-            <td><button class="pure-button gpio-green">GPIO17</button></td>
-            <td><button class="pure-button gpio-green">GPIO27</button></td>
-            <td><button class="pure-button gpio-green">GPIO22</button></td>
-            <td><button class="pure-button gpio-orange pure-button-disabled">3V3</button></td>
-            <td><button class="pure-button gpio-green">GPIO10</button></td>
-            <td><button class="pure-button gpio-green">GPIO9</button></td>
-            <td><button class="pure-button gpio-green">GPIO11</button></td>
-            <td><button class="pure-button gpio-black pure-button-disabled">Ground</button></td>
+            <td><button id="pin1" class="pure-button gpio-orange pure-button-disabled">3V3</button></td>
+            <td><button id="pin3" class="pure-button gpio-pink pure-button-active">GPIO2</button></td>
+            <td><button id="pin5" class="pure-button gpio-green">GPIO3</button></td>
+            <td><button id="pin7" class="pure-button gpio-green">GPIO4</button></td>
+            <td><button id="pin9" class="pure-button gpio-black pure-button-disabled">Ground</button></td>
+            <td><button id="pin11" class="pure-button gpio-green">GPIO17</button></td>
+            <td><button id="pin13" class="pure-button gpio-green">GPIO27</button></td>
+            <td><button id="pin15" class="pure-button gpio-green">GPIO22</button></td>
+            <td><button id="pin17" class="pure-button gpio-orange pure-button-disabled">3V3</button></td>
+            <td><button id="pin19" class="pure-button gpio-green">GPIO10</button></td>
+            <td><button id="pin21" class="pure-button gpio-green">GPIO9</button></td>
+            <td><button id="pin23" class="pure-button gpio-green">GPIO11</button></td>
+            <td><button id="pin25" class="pure-button gpio-black pure-button-disabled">Ground</button></td>
           </tr>
         </table>
       </div>
       <div id="gpio-interfeces" class="pure-u-1">
         <p>interfaces</p>
-        <ul>
-          <li>
+        <ul id="switches">
+          <li id="switch2">
             <span class="left">GPIO2</span>
             <div class="onoffswitch left">
               <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="gpio-switch2">
               <label class="onoffswitch-label" for="gpio-switch2">
-                <span class="onoffswitch-inner"></span>
-                <span class="onoffswitch-switch"></span>
-              </label>
-            </div>
-          </li>
-          <li>
-            <span class="left">GPIO3</span>
-            <div class="onoffswitch left">
-              <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="gpio-switch3">
-              <label class="onoffswitch-label" for="gpio-switch3">
                 <span class="onoffswitch-inner"></span>
                 <span class="onoffswitch-switch"></span>
               </label>
