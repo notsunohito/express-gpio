@@ -33,6 +33,10 @@ $("#pin23").on('click', toggleSwitch());
 
 $("#pin3").trigger('click');
 
+$("#gpio-switch2").on('change',function(){
+    $.get('/gpio/2/on');
+});
+
 function toggleSwitch(e) {
     var exists = false;
 
