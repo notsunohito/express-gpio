@@ -33,10 +33,6 @@ $("#pin23").on('click', toggleSwitch());
 
 $("#pin3").trigger('click');
 
-$("#gpio-switch2").on('change',function(){
-    $.get('/gpio/2/on');
-});
-
 function toggleSwitch(e) {
     var exists = false;
 
@@ -65,6 +61,22 @@ function appendSwitch(e) {
     var name = e.currentTarget.innerText;
     var number = deriveNumber(name);
     $("#switches").append(switchesTemplate({name: name, number: number}));
+    $("#gpio-switch" + number).on('change',toggleGpio());
+}
+
+function toggleGpio(e) {
+    var isHigh = false;
+    return function(e) {
+        var name = e.currentTarget.id;
+        var number = deriveNumber(name);
+        if(isHigh) {
+            isHigh = false;
+            $.get('/gpio/'+number+'/off');
+        } else {
+            isHigh = true;
+            $.get('/gpio/'+number+'/on');
+        }
+    };
 }
 
 function deriveNumber(name) {
