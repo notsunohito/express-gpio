@@ -4,7 +4,7 @@
 ### Install
 $`npm install --production`
 
-### Stating server
+### Starting server
 $`npm start`
 
 ### Develop
