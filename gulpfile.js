@@ -1,5 +1,6 @@
-var gulp = require('gulp');
+var gulp        = require('gulp');
 var browserSync = require('browser-sync');
+var nodemon     = require('gulp-nodemon');
 
 gulp.task('browserSyncTask', function() {
     browserSync({
@@ -17,8 +18,15 @@ gulp.task('browserSyncTask', function() {
     });
 });
 
-gulp.task('bs-reload', function () {
+gulp.task('reload', function () {
     browserSync.reload();
+});
+
+gulp.task('dev', function() {
+    nodemon({ script: './bin/www', ext: 'js ejs', env: { 'NODE_ENV': 'development' }})
+        .on('restart', function () {
+            console.log('restarted!');
+        });
 });
 
 gulp.task('default', ['browserSyncTask']);
