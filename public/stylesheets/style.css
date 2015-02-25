@@ -14,6 +14,10 @@ body {
     width: 800px;
 }
 
+.left {
+    float: left;
+}
+
 #main {
     margin: 40px 0 0 0;
 }
@@ -36,17 +40,20 @@ div#gpio-interfeces {
     list-style-type: none;
 }
 
-.left {
-    float: left;
-}
-
 #gpio-interfeces li {
     clear: both;
+    height: 45px;
+}
+
+div.onoffswitch {
+    position: absolute;
+    left: 140px;
 }
 
 .pure-button {
     width: 100%;
 }
+
 .gpio-pink {
     background: rgb(255, 105, 180);    
 }
