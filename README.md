@@ -1,8 +1,5 @@
 # express-gpio
-- A WebAPI to turn on/off RPi's GPIO
-
-＊only supported Rpi >= Rev2 at the moment
-＊only supported HIGH or LOW at the moment
+- A WebAPI to turn on/off RPi's [GPIO](http://www.raspberrypi.org/documentation/usage/gpio/)
 
 ### Install on your RPi
 $`git clone http://github.com/notsunohito/express-gpio && cd express-gpio`
@@ -23,6 +20,11 @@ $`curl --request GET http://{RPi's hostname}:3000/gpio/2/off`
 will turn off RPi's GPIO2
 
 If you want to use a example GUI, Open `http://{RPi's hostname}:3000/` with browser
+
+
+＊only supported Rpi >= Rev2 at the moment
+
+＊only supported HIGH or LOW at the moment
 
 ### Develop
 ##### Install full packages
