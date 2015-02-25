@@ -5,14 +5,14 @@ var exec      = require('child_process').exec;
 var Controller = {
 
     do: function(action, gpioNumber) {
-        var message = null;
+        var errorMessage;
         if(!V.isLegalNumber( gpioNumber )) {
-            message = 'The number must be any of the following values :  ' + V.getLegalNumbers();
-            return ApiResult.error(gpioNumber, action, message);
+            errorMessage = 'The gpioNumber must be any of the following values :  ' + V.getLegalNumbers();
+            return ApiResult.error(gpioNumber, action, errorMessage);
         }
         if(!V.isLegalAction( action ) ) {
-            message = 'The action must be any of the following values :  ' + V.getLegalActions();
-            return ApiResult.error(gpioNumber, action, message);
+            errorMessage = 'The action must be any of the following values :  ' + V.getLegalActions();
+            return ApiResult.error(gpioNumber, action, errorMessage);
         }
         return this[action].call(this, gpioNumber, action);
     },

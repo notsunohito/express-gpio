@@ -4,10 +4,10 @@ var router  = express.Router();
 var GpioController = require('../modules/gpio/controller');
 
 
-router.get('/:number/:action', function(req, res, next) {
-    var number = req.params.number;
+router.get('/:gpioNumber/:action', function(req, res, next) {
+    var gpioNumber = req.params.gpioNumber;
     var action = req.params.action;
-    var result = GpioController.do(action, number);
+    var result = GpioController.do(action, gpioNumber);
     if (result.hasError) {
         res.status(400).json( result );
         return;
