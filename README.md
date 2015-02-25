@@ -1,5 +1,5 @@
 # Express-GPIO
-- A WebAPI to turn on/off RPi's [GPIO](http://www.raspberrypi.org/documentation/usage/gpio/)
+- A webAPI server to turn on/off RPi's [GPIO](http://www.raspberrypi.org/documentation/usage/gpio/)
 
 # Install on your RPi
 $`git clone http://github.com/notsunohito/express-gpio && cd express-gpio`
