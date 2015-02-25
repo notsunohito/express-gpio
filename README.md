@@ -4,8 +4,10 @@
 ### Install
 $`npm install --production`
 
-### Usage
+### Stating server
 $`npm start`
+
+### Go to localhost:3000
 
 ### Develop
 $`npm install`
