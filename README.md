@@ -11,11 +11,11 @@ $`npm start`
 
 # Usage
 
-$`curl --request GET http://{RPi's hostname}:3000/gpio/2/on`
+$`curl --request GET http://{RPi's hostname}:3000/gpio/2/high`
 
 will turn on GPIO2
 
-$`curl --request GET http://{RPi's hostname}:3000/gpio/2/off`
+$`curl --request GET http://{RPi's hostname}:3000/gpio/2/low`
 
 will turn off GPIO2
 

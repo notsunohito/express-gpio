@@ -1,39 +1,34 @@
-var ApiResult = require('./apiresult');
-var Validator = require('./validator');
+var ApiResult = require('../apiresult');
+var V         = require('./validator');
 var exec      = require('child_process').exec;
 
 var Controller = {
 
-    do: function(action, number) {
+    do: function(action, gpioNumber) {
         var message = null;
-        if(!Validator.isLegalNumber( number )) {
-            message = 'error: The number must be any of the following values : ' + Validator.getLegalNumbers();
-            return ApiResult.error(number, action, message);
+        if(!V.isLegalNumber( gpioNumber )) {
+            message = 'The number must be any of the following values :  ' + V.getLegalNumbers();
+            return ApiResult.error(gpioNumber, action, message);
         }
-        if(!Validator.isLegalAction( action ) ) {
-            message ="error: The action must be 'show', 'on' or 'off'";
-            return ApiResult.error(number, action, message);
+        if(!V.isLegalAction( action ) ) {
+            message = 'The action must be any of the following values :  ' + V.getLegalActions();
+            return ApiResult.error(gpioNumber, action, message);
         }
-        return this[action].call(this, number);
+        return this[action].call(this, gpioNumber, action);
     },
 
-    show: function(number) {
-        var message = 'show: ' + number;
-        return ApiResult.ok(number, 'show', message);
+    high: function(gpioNumber, action) {
+        var message = 'GPIO' + gpioNumber + ':high => OK';
+        exec('echo '+ gpioNumber +' > /sys/class/gpio/export');
+        exec('echo out > /sys/class/gpio/gpio' + gpioNumber + '/direction');
+        exec('echo 1 > /sys/class/gpio/gpio' + gpioNumber +'/value');
+        return ApiResult.ok(gpioNumber, action, message);
     },
 
-    on: function(number) {
-        var message ='on : ' + number;
-        exec('echo '+ number +' > /sys/class/gpio/export');
-        exec('echo out > /sys/class/gpio/gpio' + number + '/direction');
-        exec('echo 1 > /sys/class/gpio/gpio' + number +'/value');
-        return ApiResult.ok(number, 'on', message);
-    },
-
-    off: function(number) {
-        var message = 'off : ' + number;
-        exec('echo 0 > /sys/class/gpio/gpio'+ number +'/value');
-        return ApiResult.ok(number, 'off', message);
+    low: function(gpioNumber, action) {
+        var message = 'GPIO' + gpioNumber + ':low => OK';
+        exec('echo 0 > /sys/class/gpio/gpio'+ gpioNumber +'/value');
+        return ApiResult.ok(gpioNumber, action, message);
     }
 };
 

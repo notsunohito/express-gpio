@@ -53,33 +53,33 @@ function toggleSwitch(e) {
 
 function removeSwitch(e) {
     var name = e.currentTarget.innerText;
-    var number = deriveNumber(name);
-    $('#switch' + number).remove();
+    var gpioNumber = deriveGpioNumber(name);
+    $('#switch' + gpioNumber).remove();
 }
 
 function appendSwitch(e) {
     var name = e.currentTarget.innerText;
-    var number = deriveNumber(name);
-    $("#switches").append(switchesTemplate({name: name, number: number}));
-    $("#gpio-switch" + number).on('change',toggleGpio());
+    var gpioNumber = deriveGpioNumber(name);
+    $("#switches").append(switchesTemplate({name: name, number: gpioNumber}));
+    $("#gpio-switch" + gpioNumber).on('change',toggleGpio());
 }
 
 function toggleGpio(e) {
     var isHigh = false;
     return function(e) {
         var name = e.currentTarget.id;
-        var number = deriveNumber(name);
+        var gpioNumber = deriveGpioNumber(name);
         if(isHigh) {
             isHigh = false;
-            $.get('/gpio/'+number+'/off');
+            $.get('/gpio/'+gpioNumber+'/low');
         } else {
             isHigh = true;
-            $.get('/gpio/'+number+'/on');
+            $.get('/gpio/'+gpioNumber+'/high');
         }
     };
 }
 
-function deriveNumber(name) {
+function deriveGpioNumber(name) {
     return name
         .replace(/[^0-9]/g,'')
         .replace(/^0/,'');
