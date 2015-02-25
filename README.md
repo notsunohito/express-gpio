@@ -7,11 +7,10 @@ $`npm install --production`
 ### Stating server
 $`npm start`
 
-### Go to localhost:3000
-
 ### Develop
 $`npm install`
 
 $`gulp dev`
-#### Open another shell then
+
+#### Open another terminal then
 $`gulp`
