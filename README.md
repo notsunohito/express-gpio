@@ -1,4 +1,4 @@
-# express-gpio
+# Express-GPIO
 - A WebAPI to turn on/off RPi's [GPIO](http://www.raspberrypi.org/documentation/usage/gpio/)
 
 # Install on your RPi
@@ -27,13 +27,16 @@ If you want to use a example GUI, Open `http://{RPi's hostname}:3000/` with brow
 ＊only supported for HIGH or LOW at the moment
 
 # Develop
-##### Install full packages
+##### Install full packages:
 $`npm install`
 
-##### Start the server with nodemon
+##### Install gulp globally:
+$`npm install --global gulp`
+
+##### Start the server using nodemon:
 $`gulp dev`
 
-##### Open another terminal then
+##### Open another terminal then:
 $`gulp`
 
 ##### will enable [BrowserSync](http://www.browsersync.io/)
