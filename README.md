@@ -9,14 +9,22 @@ $`npm start`
 
 ### Usage
 
-`GET rpishostname:3000/gpio/2/on`
+$`curl --request GET http://{RPi's hostname}:3000/gpio/2/on`
 
 will turn on RPi's GPIO2
 
+$`curl --request GET http://{RPi's hostname}:3000/gpio/2/off`
+
+will turn off RPi's GPIO2
+
+\＊only supported HIGH or LOW at the moment
+
 ### Develop
+##### Install full packages
 $`npm install`
 
+##### Starting server with nodemon
 $`gulp dev`
 
-#### Open another terminal then
+##### Open another terminal then
 $`gulp`
