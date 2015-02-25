@@ -10,6 +10,7 @@ $`npm start`
 ### Usage
 
 `GET rpishostname:3000/gpio/2/on`
+
 will turn on RPi's GPIO2
 
 ### Develop
