@@ -4,7 +4,7 @@
 ### Install on your RPi
 $`npm install --production`
 
-### Starting server
+### Start the server
 $`npm start`
 
 ### Usage
@@ -23,7 +23,7 @@ will turn off RPi's GPIO2
 ##### Install full packages
 $`npm install`
 
-##### Starting server with nodemon
+##### Start the server with nodemon
 $`gulp dev`
 
 ##### Open another terminal then
