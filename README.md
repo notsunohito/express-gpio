@@ -36,4 +36,4 @@ $`gulp dev`
 ##### Open another terminal then
 $`gulp`
 
-##### will be enable [BrowserSync](http://www.browsersync.io/)
+##### will enable [BrowserSync](http://www.browsersync.io/)
