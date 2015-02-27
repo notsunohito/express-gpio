@@ -15,14 +15,10 @@ var Resources = {
         return this.actions.indexOf(action) >= 0;
     },
     enumlateNumbers: function() {
-        return this.gpioNumbers.reduce(function(acc, current) {
-            return acc + ', ' + current;
-        });
+        return this.gpioNumbers.join(', ');
     },
     enumlateActions: function() {
-        return this.actions.reduce(function(acc, current) {
-            return acc + ', ' + current;
-        });
+        return this.actions.join(', ');
     }
 };
 
