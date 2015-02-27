@@ -1,5 +1,5 @@
 # Express-GPIO
-- A Nodejs Express based WebAPI server to turn on/off RPi's [GPIO](http://www.raspberrypi.org/documentation/usage/gpio/)
+- A Nodejs Express based WebAPI server to turn on/off RPi [GPIO](http://www.raspberrypi.org/documentation/usage/gpio/)
 
 # Install on your RPi
 $`git clone http://github.com/notsunohito/express-gpio && cd express-gpio`
@@ -33,7 +33,7 @@ $`npm install`
 ##### Install gulp globally:
 $`npm install --global gulp`
 
-##### Start the server using nodemon:
+##### Start the server with nodemon:
 $`gulp dev`
 
 ##### Open another terminal then:
