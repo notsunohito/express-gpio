@@ -23,7 +23,7 @@ gulp.task('reload', function () {
 });
 
 gulp.task('dev', function() {
-    nodemon({ script: './bin/www', ext: 'js ejs', env: { 'NODE_ENV': 'development' }})
+    nodemon({ script: './bin/www', ext: 'js ejs json', env: { 'NODE_ENV': 'development' }})
         .on('restart', function () {
             console.log('restarted!');
         });

@@ -7,12 +7,12 @@ var GpioController = require('../modules/gpio/controller');
 router.get('/:gpioNumber/:action', function(req, res, next) {
     var gpioNumber = req.params.gpioNumber;
     var action = req.params.action;
-    var result = GpioController.do(action, gpioNumber);
-    if (result.hasError) {
-        res.status(400).json( result );
+    var apiResult = GpioController.do(action, gpioNumber);
+    if (apiResult.hasError) {
+        res.status(400).json( apiResult );
         return;
     }
-    res.status(200).json( result );
+    res.status(200).json( apiResult );
 });
 
 

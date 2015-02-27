@@ -1,4 +1,4 @@
-var ApiResult = require('../apiresult');
+var ApiResult = require('../apiresult/apiresult');
 var V         = require('./validator');
 var exec      = require('child_process').exec;
 

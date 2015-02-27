@@ -11,16 +11,16 @@ $("#pin3").trigger('click');
 
 
 function toggleSwitch(e) {
-    var existsSwtich = false;
+    var existsSwitch = false;
 
     return function(e) {
-        if(existsSwtich) {
-            existsSwtich = false;
+        if(existsSwitch) {
+            existsSwitch = false;
             e.currentTarget.classList.remove('gpio-pink');
             e.currentTarget.classList.add('gpio-green');
             removeSwitch(e);
         } else {
-            existsSwtich = true;
+            existsSwitch = true;
             e.currentTarget.classList.remove('gpio-green');
             e.currentTarget.classList.add('gpio-pink');
             appendSwitch(e);

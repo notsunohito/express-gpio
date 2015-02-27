@@ -12,10 +12,10 @@
 
   <div class="container">
 
-    <div id="main" class="pure-g">
+    <div class="pure-g">
       <div class="pure-u-1">
         <p>GPIOs</p>
-        <table id="gpios">
+        <table id="gpio-panel">
           <tr>
             <td><button id="pin2" class="pure-button gpio-red pure-button-disabled">5V</button></td>
             <td><button id="pin4" class="pure-button gpio-red pure-button-disabled">5V</button></td>
@@ -47,13 +47,13 @@
             <td><button id="pin25" class="pure-button gpio-black pure-button-disabled">Ground</button></td>
           </tr>
         </table>
-      </div>
-      <div id="gpio-interfeces" class="pure-u-1">
+      </div> <!-- .pure-u-1 -->
+
+      <div id="switches-wrapper" class="pure-u-1">
         <p>Switches</p>
         <ul id="switches"></ul>
-      </div> <!-- #gpio-interfeces -->
-    </div>
-
+      </div> <!-- #switches-wrapper -->
+    </div> <!-- .pure-g -->
   </div> <!-- .container -->
 
   <script src="/javascripts/main.js"></script>
