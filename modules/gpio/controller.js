@@ -1,17 +1,17 @@
 var ApiResult = require('../apiresult/apiresult');
-var V         = require('./validator');
+var R         = require('./resources');
 var exec      = require('child_process').exec;
 
 var Controller = {
 
     do: function(action, gpioNumber) {
         var errorMessage;
-        if(!V.isLegalNumber( gpioNumber )) {
-            errorMessage = 'The gpioNumber must be any of the following values :  ' + V.getLegalNumbers();
+        if(!R.isLegalNumber( gpioNumber )) {
+            errorMessage = 'The gpioNumber must be any of the following values :  ' + R.enumlateNumbers();
             return ApiResult.error(gpioNumber, action, errorMessage);
         }
-        if(!V.isLegalAction( action ) ) {
-            errorMessage = 'The action must be any of the following values :  ' + V.getLegalActions();
+        if(!R.isLegalAction( action ) ) {
+            errorMessage = 'The action must be any of the following values :  ' + R.enumlateActions();
             return ApiResult.error(gpioNumber, action, errorMessage);
         }
         return this[action].call(this, gpioNumber, action);

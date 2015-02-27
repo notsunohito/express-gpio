@@ -1,4 +1,4 @@
-var Validator = {
+var Resources = {
     gpioNumbers: [ 2,3,4,7,8,9,
                    10,11,14,15,17,18,
                    22,23,24,25,27],
@@ -14,16 +14,16 @@ var Validator = {
     isLegalAction: function(action) {
         return this.actions.indexOf(action) >= 0;
     },
-    getLegalNumbers: function() {
+    enumlateNumbers: function() {
         return this.gpioNumbers.reduce(function(acc, current) {
             return acc + ', ' + current;
         });
     },
-    getLegalActions: function() {
+    enumlateActions: function() {
         return this.actions.reduce(function(acc, current) {
             return acc + ', ' + current;
         });
     }
 };
 
-module.exports = Validator;
+module.exports = Resources;
